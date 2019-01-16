@@ -10,18 +10,19 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
 
 ## Contains
 
-- [x] [Typescript](https://www.typescriptlang.org/) 2.7
-- [x] [React](https://facebook.github.io/react/) 16
-- [x] [React Router](https://github.com/ReactTraining/react-router) 4.2
+- [x] [Typescript](https://www.typescriptlang.org/)
+- [x] [React](https://facebook.github.io/react/) 16+
+- [x] [React Router](https://github.com/ReactTraining/react-router) 4+
 - [x] [Mobx](https://github.com/mobxjs/mobx)
 - [x] [Mobx React](https://github.com/mobxjs/mobx-react)
 - [x] [Mobx React Router](https://github.com/alisd23/mobx-react-router/)
 - [x] [Mobx React Devtools](https://github.com/mobxjs/mobx-react-devtools)
-- Brotli Compression
-- Bundle Analyzer
+- [x] Brotli Compression
+- [x] Bundle Analyzer
+
 ### Build tools
 
-- [x] [Webpack](https://webpack.github.io) 4
+- [x] [Webpack](https://webpack.github.io) 4+
   - [x] [Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
   - [x] [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)
 - [x] [Typescript Loader](https://github.com/TypeStrong/ts-loader)
