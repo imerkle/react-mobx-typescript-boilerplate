@@ -56,7 +56,7 @@ module.exports = {
         use: [
           !isProduction && {
             loader: 'babel-loader',
-            options: { plugins: ['react-hot-loader/babel'] }
+            options: { plugins: ['react-hot-loader/babel', "@babel/plugin-syntax-dynamic-import"] }
           },
           'ts-loader'
         ].filter(Boolean)
