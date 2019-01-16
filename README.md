@@ -2,7 +2,7 @@
 
 A bare minimum react-mobx-webpack-typescript boilerplate
 
-Note that this project does not include **Server-Side Rendering**,  **Testing Frameworks** and other stuffs that makes the package unnecessarily complicated.
+Note that this project does not include **Server-Side Rendering** and other stuffs that makes the package unnecessarily complicated.
 
 Ideal for creating React apps from the scratch.
 
@@ -30,6 +30,9 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
   - [x] [CSS modules](https://github.com/css-modules/css-modules)
 - [x] [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [x] [HTML Webpack Plugin](https://github.com/ampedandwired/html-webpack-plugin)
+- [x] Jest
+- [x] Travis
+- [x] Tslint
 
 
 ## Setup
