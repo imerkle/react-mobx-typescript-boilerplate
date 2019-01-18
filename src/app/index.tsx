@@ -3,36 +3,37 @@ import { hot } from 'react-hot-loader';
 import { Router, Route, Switch } from 'react-router';
 import { Provider } from 'mobx-react';
 
-import { createBrowserHistory } from 'history';
-import { createStores } from 'app/stores';
+import { MuiThemeProvider, CssBaseline, createMuiTheme } from '@material-ui/core';
+import AppWrapper from './containers/AppWrapper';
+import JssProvider from 'react-jss/lib/JssProvider';
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider, install } from '@material-ui/styles';
-
-install();
-
-const history = createBrowserHistory();
-const rootStore = createStores(history);
-
-const theme = createMuiTheme({
-  palette: {
-  },
-});
+import {jss, rootStore, history} from 'app/setup';
+import { darkPrimary } from 'app/constants';
 
 
-const Test = React.lazy(() => import('./containers/Test'));
+
+const Home = React.lazy(() => import('./containers/Home'));
 
 // App Fragment
 class AppFragment extends React.Component<any, any> {
   render(){
+    const theme = createMuiTheme({
+      palette: {
+        type: (rootStore.appStore.theme == 0) ? "dark" : "light",
+        primary: darkPrimary,
+      },
+    })
     return (
-      <ThemeProvider theme={theme}>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
         <React.Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          <Route path="/" component={Test} />
-        </Switch>      
+        <AppWrapper>
+          <Switch>
+            <Route path="/" component={Home} />
+          </Switch>
+        </AppWrapper>
       </React.Suspense>
-      </ThemeProvider>
+      </MuiThemeProvider>
     )
   }
 }
@@ -60,10 +61,12 @@ class Root extends React.Component<any, any> {
 // render react DOM
 export const App = hot(module)(() => (
   <Root>
-    <Provider rootstore={rootStore}>
-      <Router history={history}>
-        <AppFragment />
-      </Router>
-    </Provider>
+      <Provider rootStore={rootStore}>
+        <JssProvider jss={jss}>
+          <Router history={history}>
+            <AppFragment />
+          </Router>
+        </JssProvider>
+      </Provider>
   </Root>
 ));
