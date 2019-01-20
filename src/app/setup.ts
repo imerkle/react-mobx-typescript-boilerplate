@@ -18,4 +18,3 @@ export const jss = create({
 
 export const history = createBrowserHistory();
 export const rootStore = createStores(history);
-

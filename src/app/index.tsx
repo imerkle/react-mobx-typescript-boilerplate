@@ -9,13 +9,12 @@ import JssProvider from 'react-jss/lib/JssProvider';
 
 import {jss, rootStore, history} from 'app/setup';
 import { darkPrimary } from 'app/constants';
-
-
+import { withNamespaces, I18nextProvider } from "react-i18next";
+import i18n from './i18n';
 
 const Home = React.lazy(() => import('./containers/Home'));
 
-// App Fragment
-class AppFragment extends React.Component<any, any> {
+class AppFragment extends React.Component<any, any>{
   render(){
     const theme = createMuiTheme({
       palette: {
@@ -26,13 +25,15 @@ class AppFragment extends React.Component<any, any> {
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <React.Suspense fallback={<div>Loading...</div>}>
-        <AppWrapper>
-          <Switch>
-            <Route path="/" component={Home} />
-          </Switch>
-        </AppWrapper>
-      </React.Suspense>
+        <I18nextProvider i18n={i18n}>
+          <React.Suspense fallback={<div>Loading...</div>}>
+            <AppWrapper>
+              <Switch>
+                <Route path="/" component={Home} />
+              </Switch>
+            </AppWrapper>
+          </React.Suspense>
+        </I18nextProvider>
       </MuiThemeProvider>
     )
   }
@@ -57,6 +58,8 @@ class Root extends React.Component<any, any> {
     );
   }
 }
+
+//const AppFragmentWithI18n = withNamespaces()(AppFragment);
 
 // render react DOM
 export const App = hot(module)(() => (

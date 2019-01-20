@@ -26,7 +26,7 @@ if (isProduction) {
   ]
 }
 
-module.exports = {
+const config = {
   context: sourcePath,
   mode: isProduction ? "production" : "development",
   entry: {
@@ -46,7 +46,10 @@ module.exports = {
     mainFields: ['module', 'browser', 'main'],
     alias: {
       'app': path.resolve(__dirname, 'src/app/')
-    }
+    },
+    modules: [
+      './node_modules',
+    ],
   },
   module: {
     rules: [
@@ -56,7 +59,14 @@ module.exports = {
         use: [
           !isProduction && {
             loader: 'babel-loader',
-            options: { plugins: ['react-hot-loader/babel', "@babel/plugin-syntax-dynamic-import"] }
+            options: {
+              plugins: 
+                [
+
+                  'react-hot-loader/babel',
+                  "@babel/plugin-syntax-dynamic-import",
+                ]
+              }
           },
           'ts-loader'
         ].filter(Boolean)
@@ -143,3 +153,4 @@ module.exports = {
     poll: true
   },
 };
+module.exports = config;

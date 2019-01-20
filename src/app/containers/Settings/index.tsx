@@ -7,9 +7,11 @@ import * as React from "react";
 import * as stylesg from "../../style.css";
 import * as styles from "./style.css";
 import { Scrollbars } from "react-custom-scrollbars";
+import Preferences from "./preferences";
 
 const settingMenu = [
     "My Account",
+    "Preferences",
 ];
 
 @inject("rootStore")
@@ -49,6 +51,7 @@ class Settings extends React.Component<any, any> {
                 </FaDiv>
                 <Scrollbars className={cx(styles.col2)}>
                     <div style={{ padding: "65px 25px 60px 25px"}}>
+                        {selectedIndex == 1 && <Preferences />}
                     </div>
                 </Scrollbars>
                 <div className={cx(styles.col3)}>

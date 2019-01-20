@@ -6,8 +6,12 @@ import * as stylesg from '../../style.css';
 import {Typography} from '@material-ui/core';
 import {changelog} from 'app/constants';
 
+import { withNamespaces, Trans } from 'react-i18next';
+
+//@ts-ignore
+@withNamespaces()
 class Home extends React.Component<any, any> {
-    public render() {
+    render() {
         const settings = {
           dots: true,
           infinite: true,
@@ -24,7 +28,7 @@ class Home extends React.Component<any, any> {
             </Slider>
 
             <div className={cx(stylesg.mar_20)}>
-              <Typography className={cx(stylesg.h4)} variant="h4">Changelog</Typography>
+              <Typography className={cx(stylesg.h4)} variant="h4"><Trans>Changelog</Trans></Typography>
               {changelog.map((o, i)=>{
                 return (
                     <div key={i}>
