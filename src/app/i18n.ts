@@ -1,18 +1,6 @@
 import i18n from "i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
-
-const resources = {
-    en: {
-        translation: {
-            "Changelog": "Me English"
-        }
-    },
-    es: {
-        translation: {
-            "Changelog": "Hola Espanos"
-        }        
-    }
-};
+import { resources } from "app/constants";
 
 
 i18n
@@ -24,6 +12,6 @@ i18n
         interpolation: {
             escapeValue: false
         },
-        debug: true
+        debug: false
     });
 export default i18n;

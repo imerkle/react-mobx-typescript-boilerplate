@@ -1,6 +1,6 @@
 // @flow
 import { LinearProgress } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 import * as React from "react";
 
 const styleSheet = {

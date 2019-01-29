@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import { TextField } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 
 export const styleSheet = (theme) => ({
   disabled: {},

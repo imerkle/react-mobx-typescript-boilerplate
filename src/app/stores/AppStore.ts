@@ -1,6 +1,7 @@
 import { types, onSnapshot } from "mobx-state-tree"
 import {LOCALES} from "app/constants";
 import i18n from "app/i18n";
+import { setKey } from "app/utils";
 
 const App = types.model({
     theme: types.optional(types.number, 0),
@@ -11,6 +12,7 @@ const App = types.model({
 }).actions(self => {
     const setTheme = (theme: number): void => {
         self.theme = theme
+        setKey("theme", theme);
     }
     const snackOpen = (state: boolean): void => {
         self.snackopen = state
@@ -24,6 +26,7 @@ const App = types.model({
     }
     const setLocale = (locale) => {
         self.locale = locale;
+        setKey("locale", locale);
         i18n.changeLanguage(LOCALES[locale].i18n);
 
         //for <fbt /> later when its production

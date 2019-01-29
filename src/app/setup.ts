@@ -1,11 +1,8 @@
-import { install } from '@material-ui/styles';
-import { jssPreset } from '@material-ui/core';
+import { jssPreset } from '@material-ui/styles';
 import { create } from 'jss';
 
 import { createBrowserHistory } from 'history';
 import { createStores } from 'app/stores';
-
-install();
 
 const styleNode = document.createComment('jss-insertion-point');
 document.head.insertBefore(styleNode, document.head.firstChild);

@@ -1,6 +1,6 @@
 // @flow weak
 
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/styles";
 import cx from "classnames";
 import * as React from "react";
 import { Div } from "../Div";
