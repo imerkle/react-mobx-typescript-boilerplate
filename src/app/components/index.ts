@@ -1,4 +1,3 @@
-// @flow
 export {
   Div,
   Span,
@@ -8,10 +7,6 @@ export {
   default as FaDiv,
   Fa,
 } from "./FaDiv";
-
-export {
-  IconDiv,
-} from "./IconDiv";
 
 export {
   default as Button,
@@ -29,7 +24,3 @@ export {
 export {
   default as TextField,
 } from "./TextField";
-
-export {
-  default as TabContainer,
-} from "./TabContainer";

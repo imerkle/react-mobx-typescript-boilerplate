@@ -63,7 +63,7 @@ class AppFragment extends React.Component<any, any>{
 // Root class with mobx devtools
 class Root extends React.Component<any, any> {
   renderDevTool() {
-    if (process.env.NOrootStoreDE_ENV !== 'production') {
+    if (process.env.NODE_ENV !== 'production') {
       const DevTools = require('mobx-react-devtools').default;
       return <DevTools />;
     }
