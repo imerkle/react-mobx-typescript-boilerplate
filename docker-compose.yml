@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    environment:
+      - PORT=80  
+      - NODE_ENVX=${NODE_ENVX}
+    ports:
+     - "80:80"

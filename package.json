@@ -5,9 +5,10 @@
   "description": "A frontend boilerplate with React, MobX and Typescript",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "webpack-dev-server --mode development --hot --progress --colors --port 3000 --open",
+    "test": "NODE_ENVX=test jest",
+    "start": "NODE_ENVX=test webpack-dev-server --mode development --hot --progress --colors --port 3000 --open",
     "build": "webpack -p --progress --colors",
+    "build_analyze": "webpack -p -b --progress --colors",
     "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "lint": "tslint 'src/**/*.{ts,tsx}'"
   },
@@ -26,6 +27,7 @@
     "@types/webpack": "^4.4.24",
     "babel-loader": "^8.0.5",
     "brotli-webpack-plugin": "^1.1.0",
+    "codecov": "^3.2.0",
     "css-loader": "^2.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "fb-babel-plugin-utils": "^0.9.0",

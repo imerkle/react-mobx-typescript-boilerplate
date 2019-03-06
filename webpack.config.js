@@ -2,6 +2,7 @@ const path = require('path');
 
 // variables
 const isProduction = process.argv.indexOf('-p') >= 0;
+const showBundle = process.argv.indexOf('-b') >= 0;
 const sourcePath = path.join(__dirname, './src');
 const outPath = path.join(__dirname, './dist');
 
@@ -16,7 +17,6 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 let plugins = [];
 if (isProduction) {
   plugins = [
-    new BundleAnalyzerPlugin({}),
     new BrotliPlugin({
       asset: '[path].br[query]',
       test: /\.(js|css|html|svg)$/,
@@ -24,6 +24,11 @@ if (isProduction) {
       minRatio: 0.8,
     }),
   ]
+}
+if (showBundle) {
+  plugins.push(
+    new BundleAnalyzerPlugin({}),
+  )
 }
 
 const config = {
@@ -98,7 +103,7 @@ const config = {
       // static assets
       { test: /\.html$/, use: 'html-loader' },
       { test: /\.(a?png|svg)$/, use: 'url-loader?limit=10000' },
-      { test: /\.(jpe?g|gif|bmp|mp3|mp4|ogg|wav|eot|ttf|woff|woff2)$/, use: 'file-loader' }
+      { test: /\.(jpe?g|gif|bmp|mp3|mp4|ogg|wav|eot|ttf|woff|woff2)$/, use: 'file-loader' },
     ]
   },
   optimization: {
@@ -137,9 +142,9 @@ const config = {
     historyApiFallback: {
       disableDotRule: true
     },
-    stats: 'minimal',
     clientLogLevel: 'warning',
     port: 9000,
+    stats: 'errors-only'    
   },
   devtool: isProduction ? false : 'cheap-module-eval-source-map',
   node: {
@@ -152,5 +157,8 @@ const config = {
   watchOptions: {
     poll: true
   },
+  externals: [{
+    xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}'
+  }]  
 };
 module.exports = config;

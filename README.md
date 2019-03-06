@@ -1,3 +1,9 @@
+[![Build Status](https://img.shields.io/circleci/project/github/imerkle/binbase_wallet.svg)](https://circleci.com/gh/imerkle/binbase_wallet)
+[![Coverage](https://img.shields.io/codecov/c/github/imerkle/binbase_wallet.svg)](https://codecov.io/gh/imerkle/binbase_wallet)
+[![Dependency Status](https://img.shields.io/david/imerkle/binbase_wallet.svg)](https://david-dm.org/imerkle/binbase_wallet)
+[![devDependency Status](https://img.shields.io/david/dev/imerkle/binbase_wallet.svg)](https://david-dm.org/imerkle/binbase_wallet#info=devDependencies)
+
+
 # Frontend Boilerplate with React, MobX & TypeScript
 
 A bare minimum react-mobx-webpack-typescript boilerplate
