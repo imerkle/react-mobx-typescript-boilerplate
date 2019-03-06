@@ -8,3 +8,4 @@ dist
 .enum_manifest.json
 .src_manifest.json
 source_strings.json
+coverage
