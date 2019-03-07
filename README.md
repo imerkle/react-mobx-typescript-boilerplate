@@ -37,7 +37,8 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
 - [x] [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [x] [HTML Webpack Plugin](https://github.com/ampedandwired/html-webpack-plugin)
 - [x] Jest
-- [x] Travis
+- [x] CircleCI
+- [x] Docker w/ Nginx
 - [x] Tslint
 
 
